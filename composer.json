@@ -1,9 +1,7 @@
 {
-    "name": "doctrine/doctrine-migrations-bundle",
+    "name": "activecampaign/migrations-bundle",
     "type": "symfony-bundle",
-    "description": "Symfony DoctrineMigrationsBundle",
-    "keywords": ["DBAL", "Migrations", "Schema"],
-    "homepage": "http://www.doctrine-project.org",
+    "description": "ActiveCampaign Migrations Bundle",
     "license": "MIT",
     "authors": [
         {
@@ -33,7 +31,7 @@
     },
     "extra": {
         "branch-alias": {
-          "dev-master": "1.3-dev"
+          "dev-master": "1.0.x-dev"
         }
     }
 }
