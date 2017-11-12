@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Doctrine\Bundle\MigrationsBundle\Command;
+namespace ActiveCampaign\Bundle\MigrationsBundle\Command;
 
 use Doctrine\Bundle\DoctrineBundle\Command\DoctrineCommand as BaseCommand;
 use Doctrine\DBAL\Migrations\Configuration\AbstractFileConfiguration;
@@ -20,7 +20,7 @@ abstract class DoctrineCommand extends BaseCommand
     public static function configureMigrations(ContainerInterface $container, Configuration $configuration)
     {
         if (!$configuration->getMigrationsDirectory()) {
-            $dir = $container->getParameter('doctrine_migrations.dir_name');
+            $dir = $container->getParameter('activecampaign_migrations.dir_name');
             if (!is_dir($dir) && !@mkdir($dir, 0777, true) && !is_dir($dir)) {
                 $error = error_get_last();
                 throw new \ErrorException($error['message']);
@@ -42,14 +42,14 @@ abstract class DoctrineCommand extends BaseCommand
             $configuration->setMigrationsDirectory($dir);
         }
         if (!$configuration->getMigrationsNamespace()) {
-            $configuration->setMigrationsNamespace($container->getParameter('doctrine_migrations.namespace'));
+            $configuration->setMigrationsNamespace($container->getParameter('activecampaign_migrations.namespace'));
         }
         if (!$configuration->getName()) {
-            $configuration->setName($container->getParameter('doctrine_migrations.name'));
+            $configuration->setName($container->getParameter('activecampaign_migrations.name'));
         }
         // For backward compatibility, need use a table from parameters for overwrite the default configuration
         if (!($configuration instanceof AbstractFileConfiguration) || !$configuration->getMigrationsTableName()) {
-            $configuration->setMigrationsTableName($container->getParameter('doctrine_migrations.table_name'));
+            $configuration->setMigrationsTableName($container->getParameter('activecampaign_migrations.table_name'));
         }
         // Migrations is not register from configuration loader
         if (!($configuration instanceof AbstractFileConfiguration)) {
@@ -57,10 +57,10 @@ abstract class DoctrineCommand extends BaseCommand
         }
 
         if (method_exists($configuration, 'getCustomTemplate') && !$configuration->getCustomTemplate()) {
-            $configuration->setCustomTemplate($container->getParameter('doctrine_migrations.custom_template'));
+            $configuration->setCustomTemplate($container->getParameter('activecampaign_migrations.custom_template'));
         }
 
-        $organizeMigrations = $container->getParameter('doctrine_migrations.organize_migrations');
+        $organizeMigrations = $container->getParameter('activecampaign_migrations.organize_migrations');
         switch ($organizeMigrations) {
             case Configuration::VERSIONS_ORGANIZATION_BY_YEAR:
                 $configuration->setMigrationsAreOrganizedByYear(true);
@@ -74,7 +74,7 @@ abstract class DoctrineCommand extends BaseCommand
                 break;
 
             default:
-                throw new InvalidArgumentException('Invalid value for "doctrine_migrations.organize_migrations" parameter.');
+                throw new InvalidArgumentException('Invalid value for "activecampaign_migrations.organize_migrations" parameter.');
         }
 
         self::injectContainerToMigrations($container, $configuration->getMigrations());

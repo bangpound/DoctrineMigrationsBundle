@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Doctrine\Bundle\MigrationsBundle\DependencyInjection;
+namespace ActiveCampaign\Bundle\MigrationsBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -13,7 +13,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * @author Lukas Kahwe Smith <smith@pooteeweet.org>
  */
-class DoctrineMigrationsExtension extends Extension
+class ActiveCampaignMigrationsExtension extends Extension
 {
     /**
      * Responds to the migrations configuration parameter.
@@ -50,5 +50,15 @@ class DoctrineMigrationsExtension extends Extension
     public function getNamespace()
     {
         return 'http://symfony.com/schema/dic/doctrine/migrations';
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @return string
+     */
+    public function getAlias()
+    {
+        return 'activecampaign_migrations';
     }
 }

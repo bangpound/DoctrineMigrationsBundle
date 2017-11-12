@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Doctrine\Bundle\MigrationsBundle\DependencyInjection;
+namespace ActiveCampaign\Bundle\MigrationsBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
- * DoctrineMigrationsExtension configuration structure.
+ * MigrationsExtension configuration structure.
  *
  * @author Lukas Kahwe Smith <smith@pooteeweet.org>
  */
@@ -21,7 +21,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('doctrine_migrations', 'array');
+        $rootNode = $treeBuilder->root('activecampaign_migrations', 'array');
 
         $organizeMigrationModes = $this->getOrganizeMigrationsModes();
 

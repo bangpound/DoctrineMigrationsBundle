@@ -5,25 +5,25 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="doctrine_migrations.diff_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsDiffDoctrineCommand">
+        <service id="doctrine_migrations.diff_command" class="ActiveCampaign\Bundle\MigrationsBundle\Command\MigrationsDiffDoctrineCommand">
             <tag name="console.command" />
         </service>
-        <service id="doctrine_migrations.execute_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsExecuteDoctrineCommand">
+        <service id="doctrine_migrations.execute_command" class="ActiveCampaign\Bundle\MigrationsBundle\Command\MigrationsExecuteDoctrineCommand">
             <tag name="console.command" />
         </service>
-        <service id="doctrine_migrations.generate_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsGenerateDoctrineCommand">
+        <service id="doctrine_migrations.generate_command" class="ActiveCampaign\Bundle\MigrationsBundle\Command\MigrationsGenerateDoctrineCommand">
             <tag name="console.command" />
         </service>
-        <service id="doctrine_migrations.latest_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsLatestDoctrineCommand">
+        <service id="doctrine_migrations.latest_command" class="ActiveCampaign\Bundle\MigrationsBundle\Command\MigrationsLatestDoctrineCommand">
             <tag name="console.command" />
         </service>
-        <service id="doctrine_migrations.migrate_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsMigrateDoctrineCommand">
+        <service id="doctrine_migrations.migrate_command" class="ActiveCampaign\Bundle\MigrationsBundle\Command\MigrationsMigrateDoctrineCommand">
             <tag name="console.command" />
         </service>
-        <service id="doctrine_migrations.status_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsStatusDoctrineCommand">
+        <service id="doctrine_migrations.status_command" class="ActiveCampaign\Bundle\MigrationsBundle\Command\MigrationsStatusDoctrineCommand">
             <tag name="console.command" />
         </service>
-        <service id="doctrine_migrations.version_command" class="Doctrine\Bundle\MigrationsBundle\Command\MigrationsVersionDoctrineCommand">
+        <service id="doctrine_migrations.version_command" class="ActiveCampaign\Bundle\MigrationsBundle\Command\MigrationsVersionDoctrineCommand">
             <tag name="console.command" />
         </service>
     </services>

@@ -1,26 +1,27 @@
 <?php
 
-namespace Doctrine\Bundle\MigrationsBundle\Tests\DependencyInjection;
+namespace ActiveCampaign\Bundle\MigrationsBundle\Tests\DependencyInjection;
 
-use Doctrine\Bundle\MigrationsBundle\DependencyInjection\DoctrineMigrationsExtension;
+use ActiveCampaign\Bundle\MigrationsBundle\DependencyInjection\ActiveCampaignMigrationsExtension;
 use Doctrine\DBAL\Migrations\Configuration\Configuration;
+use PhpUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 
-class DoctrineMigrationsExtensionTest extends \PHPUnit_Framework_TestCase
+class DoctrineMigrationsExtensionTest extends TestCase
 {
     public function testOrganizeMigrations()
     {
         $container = $this->getContainer();
-        $extension = new DoctrineMigrationsExtension();
+        $extension = new ActiveCampaignMigrationsExtension();
 
         $config = array(
             'organize_migrations' => 'BY_YEAR',
         );
 
-        $extension->load(array('doctrine_migrations' => $config), $container);
+        $extension->load(array('activecampaign_migrations' => $config), $container);
 
-        $this->assertEquals(Configuration::VERSIONS_ORGANIZATION_BY_YEAR, $container->getParameter('doctrine_migrations.organize_migrations'));
+        $this->assertEquals(Configuration::VERSIONS_ORGANIZATION_BY_YEAR, $container->getParameter('activecampaign_migrations.organize_migrations'));
     }
 
     private function getContainer()

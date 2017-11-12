@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Doctrine\Bundle\MigrationsBundle\Command;
+namespace ActiveCampaign\Bundle\MigrationsBundle\Command;
 
 use InvalidArgumentException;
 use Symfony\Component\Console\Input\InputInterface;

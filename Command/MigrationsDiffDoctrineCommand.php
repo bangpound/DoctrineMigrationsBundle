@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Doctrine\Bundle\MigrationsBundle\Command;
+namespace ActiveCampaign\Bundle\MigrationsBundle\Command;
 
 use Doctrine\DBAL\Migrations\Tools\Console\Command\DiffCommand;
 use Symfony\Component\Console\Input\InputInterface;

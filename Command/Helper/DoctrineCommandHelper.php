@@ -1,8 +1,8 @@
 <?php
 
-namespace Doctrine\Bundle\MigrationsBundle\Command\Helper;
+namespace ActiveCampaign\Bundle\MigrationsBundle\Command\Helper;
 
-use Doctrine\Bundle\DoctrineBundle\Command\Proxy\DoctrineCommandHelper as BaseDoctrineCommandHelper;
+use ActiveCampaign\Bundle\DoctrineBundle\Command\Proxy\DoctrineCommandHelper as BaseDoctrineCommandHelper;
 use Doctrine\DBAL\Sharding\PoolingShardConnection;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\InputInterface;
